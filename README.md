@@ -3,6 +3,8 @@
 Random data generator plugin for Clipaste. Provides real generators for passwords,
 templated strings, Finnish personal identity codes, IBANs, and business IDs.
 
+![clipaste randomizer](clipaste-randomizer.gif)
+
 ## Development
 
 ```bash
