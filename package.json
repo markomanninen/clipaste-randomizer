@@ -32,7 +32,7 @@
     "node": ">=18.0.0"
   },
   "peerDependencies": {
-    "clipaste": ">=1.0.7"
+    "clipaste": ">=1.1.1"
   },
   "devDependencies": {
     "commander": "^11.0.0"
