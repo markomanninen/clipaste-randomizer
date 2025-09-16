@@ -29,6 +29,11 @@ function compileTemplate (template, { defaultPool = CHARSETS.upper } = {}) {
       i += 1
       continue
     }
+    if (char === '{' && template[i + 1] === '{') {
+      tokens.push(() => '{')
+      i += 1
+      continue
+    }
     if (char === '{') {
       const end = template.indexOf('}', i + 1)
       if (end === -1) {
@@ -42,6 +47,11 @@ function compileTemplate (template, { defaultPool = CHARSETS.upper } = {}) {
     }
     if (char === 'X') {
       tokens.push(() => pickFromCharset(defaultCharset))
+      continue
+    }
+    if (char === '}' && template[i + 1] === '}') {
+      tokens.push(() => '}')
+      i += 1
       continue
     }
     if (DEFAULT_PLACEHOLDERS[char]) {
