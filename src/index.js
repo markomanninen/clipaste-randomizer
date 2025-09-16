@@ -108,6 +108,7 @@ function register ({ program, services = {}, logger = console }) {
     .command('personal-id')
     .description('Generate or validate Finnish personal identity codes (HETU)')
     .option('--born <yyyy-mm-dd>', 'Fix the date of birth')
+    .option('--birthdate <yyyy-mm-dd>', 'Alias for --born')
     .option('--age-range <min-max>', 'Age range used for random sampling', '18-65')
     .option('--gender <any|female|male>', 'Gender parity for the individual number', 'any')
     .option('--format <short|long>', 'Output format', 'short')
@@ -135,8 +136,16 @@ function register ({ program, services = {}, logger = console }) {
         return
       }
 
+      if (options.born && options.birthdate && options.born !== options.birthdate) {
+        console.error('Conflicting values provided for --born and --birthdate')
+        process.exitCode = 1
+        return
+      }
+
+      const born = options.born || options.birthdate
+
       const result = hetu.generate({
-        born: options.born,
+        born,
         ageRange: options.ageRange,
         gender: options.gender,
         format: options.format
