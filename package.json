@@ -19,11 +19,11 @@
     "iban",
     "identity"
   ],
-  "author": "Marko Manninen <marko.manninen@gmail.com>",
+  "author": "Marko Manninen <elonmedia@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/markomanninen/clipaste-randomizer.git"
+    "url": "git+https://github.com/markomanninen/clipaste-randomizer.git"
   },
   "bugs": {
     "url": "https://github.com/markomanninen/clipaste/issues"
