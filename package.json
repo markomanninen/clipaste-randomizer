@@ -1,6 +1,6 @@
 {
   "name": "clipaste-randomizer",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Random data generator plugin for Clipaste CLI",
   "main": "src/index.js",
   "type": "commonjs",
