@@ -33,5 +33,8 @@
   },
   "peerDependencies": {
     "clipaste": ">=1.0.7"
+  },
+  "devDependencies": {
+    "commander": "^11.0.0"
   }
 }
